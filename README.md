@@ -3,7 +3,7 @@ kernel-install plugin to create UKIs with dracut
 ## Installation
 
 ```console
-$ sudo make install
+# make install
 ```
 
 ## Configuration
