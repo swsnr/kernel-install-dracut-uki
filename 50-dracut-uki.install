@@ -21,6 +21,10 @@ ENTRY_DIR_ABS="$3"
 
 IMAGE_FILE="$ENTRY_DIR_ABS/linux"
 
+if [[ -n "$KERNEL_INSTALL_INITRD_GENERATOR" && "$KERNEL_INSTALL_INITRD_GENERATOR" != dracut ]]; then
+    exit 0
+fi
+
 if [ "$KERNEL_INSTALL_LAYOUT" == "uki" ]; then
     UKI_DIR="$KERNEL_INSTALL_BOOT_ROOT/EFI/Linux"
     TRIES_FILE="${KERNEL_INSTALL_CONF_ROOT:-/etc/kernel}/tries"
